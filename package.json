@@ -1,0 +1,25 @@
+{
+  "name": "resume-context-builder",
+  "version": "1.0.0",
+  "description": "Generate tailored resumes using AI",
+  "type": "module",
+  "scripts": {
+    "generate": "tsx src/generate.ts",
+    "answer": "tsx src/answer-question.ts",
+    "dev": "tsx --watch src/generate.ts"
+  },
+  "keywords": [
+    "resume",
+    "ai",
+    "cli"
+  ],
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  }
+}
