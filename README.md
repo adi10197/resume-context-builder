@@ -14,6 +14,18 @@ An intelligent, AI-powered resume generator that crafts perfectly tailored resum
 - **Privacy** - Just fork this repo and maintain your own copy, don't give your information to anyone. 
 - **Crowd sources** - Industry professionals are encouraged to contribute to this repo: adding new resume-types and refining existing resume-types.
 
+## How It Works
+
+This tool simplifies resume generation by combining your career context with AI:
+
+1. **Store your career history** in simple markdown files (one file per year)
+2. **Define resume templates** for different job types (software engineer, tech lead, etc.)
+3. **Run the script** - It generates a comprehensive prompt from your context files
+4. **AI reads and analyzes** - Your chosen AI provider (like Claude) reads all your career documents, education, and job-specific requirements
+5. **Get a tailored resume** - The AI synthesizes everything into a polished, customized resume
+
+The `generate` script handles the prompt creation and coordinates with your AI CLI agent, so you don't have to manually copy-paste or format anything. Just provide the context once, then generate unlimited variations for different opportunities.
+
 ## Quick Start
 
 ### Prerequisites
@@ -89,6 +101,15 @@ career-context-builder/
 └── tsconfig.json            # TypeScript configuration
 ```
 
+## Command Line Options
+
+- `--type` or `-t`: Resume type (required, must match a file in resume-types/)
+- `--job` or `-j`: Path to job description file (optional)
+- `--reference` or `-r`: Path to reference resume (optional)
+- `--output` or `-o`: Output file path (default: output/resume-{timestamp}.md)
+- `--paste` or `-p`: Print prompt to terminal instead of calling AI provider (optional)
+- `--provider`: AI provider to use (default: claude) - extensible for future providers
+
 ## Usage Examples
 
 ### Basic Resume Generation
@@ -130,15 +151,6 @@ The tool is designed to be extensible with different AI providers:
 ```bash
 npm run generate -- --type software-engineer --provider claude
 ```
-
-## Command Line Options
-
-- `--type` or `-t`: Resume type (required, must match a file in resume-types/)
-- `--job` or `-j`: Path to job description file (optional)
-- `--reference` or `-r`: Path to reference resume (optional)
-- `--output` or `-o`: Output file path (default: output/resume-{timestamp}.md)
-- `--paste` or `-p`: Print prompt to terminal instead of calling AI provider (optional)
-- `--provider`: AI provider to use (default: claude) - extensible for future providers
 
 ## FAQ
 
