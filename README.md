@@ -19,7 +19,7 @@ Your data stays in your repo. The community contributes resume templates and bes
 1. **Write your career history & education** — Add markdown files to `career/` (one per year) and `education/education.md`
 2. **Pick a resume type** — Choose from `resume-types/`, modify one, or create your own
 3. **Run the generate command** — `bun run generate -- --type <resume-type>`
-4. **Wait for your resume** — The script builds a prompt and sends it to your LLM, outputting a polished resume
+4. **Wait for your resume** — The script builds a prompt and sends it to your LLM, outputting a polished resume in the `/output` folder.
 
 ## Quick Start
 
