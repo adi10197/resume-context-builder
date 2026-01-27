@@ -4,9 +4,9 @@
   "description": "Generate tailored resumes using AI",
   "type": "module",
   "scripts": {
-    "generate": "tsx src/generate.ts",
-    "answer": "tsx src/answer-question.ts",
-    "dev": "tsx --watch src/generate.ts"
+    "generate": "bun src/generate.ts",
+    "answer": "bun src/answer-question.ts",
+    "dev": "bun --watch src/generate.ts"
   },
   "keywords": [
     "resume",
@@ -18,8 +18,6 @@
     "commander": "^12.0.0"
   },
   "devDependencies": {
-    "@types/node": "^20.11.0",
-    "tsx": "^4.7.0",
-    "typescript": "^5.3.3"
+    "@types/bun": "latest"
   }
 }

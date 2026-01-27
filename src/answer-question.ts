@@ -88,9 +88,9 @@ function main() {
       'after',
       `
 Examples:
-  $ npm run answer -- "Tell me about your experience with cloud development"
-  $ npm run answer -- "Describe a time you led a technical project"
-  $ npm run answer -- --provider claude "What is your experience with React?"
+  $ bun run answer -- "Tell me about your experience with cloud development"
+  $ bun run answer -- "Describe a time you led a technical project"
+  $ bun run answer -- --provider claude "What is your experience with React?"
     `
     );
 

@@ -1,10 +1,10 @@
 # Resume Context Builder
 
-> **Stop manually updating your resume for every job application.** 
+> **Stop manually updating your resume for every job application.**
 
-Let AI do the heavy lifting.
+A collection of prompt engineering scripts that generate tailored resumes using whatever LLM you're already paying for. No app to run, no new subscriptions—just fork, add your career history, and let your existing AI do the work.
 
-An intelligent, AI-powered resume generator that crafts perfectly tailored resumes from your career history. Built for developers, tech leads, and professionals who want to maintain one source of truth for their career while generating customized resumes for different opportunities.
+Your data stays in your repo. The community contributes resume templates and best practices. You get polished, job-specific resumes without handing your career history to yet another service.
 
 ## Why Use This?
 - **Works with any LLM you are paying for** - Re-use whatever LLM subscription you are already using.
@@ -16,15 +16,10 @@ An intelligent, AI-powered resume generator that crafts perfectly tailored resum
 
 ## How It Works
 
-This tool simplifies resume generation by combining your career context with AI:
-
-1. **Store your career history** in simple markdown files (one file per year)
-2. **Define resume templates** for different job types (software engineer, tech lead, etc.)
-3. **Run the script** - It generates a comprehensive prompt from your context files
-4. **AI reads and analyzes** - Your chosen AI provider (like Claude) reads all your career documents, education, and job-specific requirements
-5. **Get a tailored resume** - The AI synthesizes everything into a polished, customized resume
-
-The `generate` script handles the prompt creation and coordinates with your AI CLI agent, so you don't have to manually copy-paste or format anything. Just provide the context once, then generate unlimited variations for different opportunities.
+1. **Write your career history & education** — Add markdown files to `career/` (one per year) and `education/education.md`
+2. **Pick a resume type** — Choose from `resume-types/`, modify one, or create your own
+3. **Run the generate command** — `bun run generate -- --type <resume-type>`
+4. **Wait for your resume** — The script builds a prompt and sends it to your LLM, outputting a polished resume
 
 ## Quick Start
 
@@ -32,10 +27,9 @@ The `generate` script handles the prompt creation and coordinates with your AI C
 
 Before you begin, you'll need:
 
-1. **Node.js** (version 18 or higher)
-   - Check if installed: `node --version`
-   - [Install Node.js](https://nodejs.org/) - Download the LTS version
-   - For beginners: [Node.js installation guide](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+1. **Bun** (version 1.0 or higher)
+   - Check if installed: `bun --version`
+   - [Install Bun](https://bun.sh/) - Run `curl -fsSL https://bun.sh/install | bash`
 
 2. **An AI Provider CLI** (currently supports Claude Code CLI)
    - [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code/overview) - Requires an Anthropic API key
@@ -49,7 +43,7 @@ git clone <your-repo-url>
 cd resume-context-builder
 
 # 2. Install dependencies
-npm install
+bun install
 
 # 3. Fill in your information
 # - Add your career history to career/ (one file per year)
@@ -57,10 +51,10 @@ npm install
 # - Review resume-types/ for available templates
 
 # 4. Generate your first resume
-npm run generate -- --type software-engineer
+bun run generate -- --type software-engineer
 
 # 5. Tailor it to a specific job
-npm run generate -- --type software-engineer --job job-descriptions/example-senior-swe.md
+bun run generate -- --type software-engineer --job job-descriptions/example-senior-swe.md
 ```
 
 ## Ask a Question
@@ -68,7 +62,7 @@ Often times you get a job application that asks a question like "Tell us how you
 
 To quickly answer these questions, run:
 ```bash
-npm run answer -- "Do you have exerpience with XYZ? Explain."
+bun run answer -- "Do you have exerpience with XYZ? Explain."
 ```
 
 ## Project Structure
@@ -117,7 +111,7 @@ career-context-builder/
 Generate a resume using a specific template:
 
 ```bash
-npm run generate -- --type software-engineer
+bun run generate -- --type software-engineer
 ```
 
 ### Tailor to a Job Description
@@ -125,7 +119,7 @@ npm run generate -- --type software-engineer
 Match your resume to a specific job posting:
 
 ```bash
-npm run generate -- --type software-engineer --job job-descriptions/example-senior-swe.md
+bun run generate -- --type software-engineer --job job-descriptions/example-senior-swe.md
 ```
 
 ### Use a Reference Resume
@@ -133,7 +127,7 @@ npm run generate -- --type software-engineer --job job-descriptions/example-seni
 Generate based on a reference format:
 
 ```bash
-npm run generate -- --type software-engineer --reference reference-resumes/example.md
+bun run generate -- --type software-engineer --reference reference-resumes/example.md
 ```
 
 ### Paste Mode (Manual Use)
@@ -141,7 +135,7 @@ npm run generate -- --type software-engineer --reference reference-resumes/examp
 Print the prompt instead of auto-generating (useful for testing):
 
 ```bash
-npm run generate -- --type software-engineer --paste
+bun run generate -- --type software-engineer --paste
 ```
 
 ### Use a Different AI Provider
@@ -149,13 +143,13 @@ npm run generate -- --type software-engineer --paste
 The tool is designed to be extensible with different AI providers:
 
 ```bash
-npm run generate -- --type software-engineer --provider claude
+bun run generate -- --type software-engineer --provider claude
 ```
 
 ## FAQ
 
 **Q: Do I need programming knowledge to use this?**
-A: Basic command line familiarity and Node.js installed. If you can run `npm install` and `npm run` commands, you're good to go.
+A: Basic command line familiarity and Bun installed. If you can run `bun install` and `bun run` commands, you're good to go.
 
 **Q: Can I use this with other AI models besides Claude?**
 A: Yes! The TypeScript codebase is designed to be extensible. Currently supports Claude Code CLI, but you can easily add new providers in `src/providers.ts`. You can also use `--paste` mode to generate prompts for any AI tool.
@@ -171,6 +165,9 @@ A: Document everything chronologically in your career files. The resume type rul
 
 **Q: Can I use this for multiple people (e.g., as a career coach)?**
 A: Yes! Just create different branches for each person.
+
+**Q: Can I contribute a resume type for a specific company?**
+A: Yes! If you want to add a resume type tailored to a specific company's hiring style, suffix the filename with the company name (e.g., `software-engineer-google.md`, `product-manager-stripe.md`).
 
 ## Contributing
 

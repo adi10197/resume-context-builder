@@ -30,10 +30,10 @@ function main() {
       'after',
       `
 Examples:
-  $ npm run generate -- --type software-engineer
-  $ npm run generate -- -t software-engineer -j job-descriptions/senior-dev.md
-  $ npm run generate -- -t tech-lead -j job-descriptions/lead.md -r reference-resumes/example.md
-  $ npm run generate -- -t software-engineer --provider claude
+  $ bun run generate -- --type software-engineer
+  $ bun run generate -- -t software-engineer -j job-descriptions/senior-dev.md
+  $ bun run generate -- -t tech-lead -j job-descriptions/lead.md -r reference-resumes/example.md
+  $ bun run generate -- -t software-engineer --provider claude
     `
     );
 
