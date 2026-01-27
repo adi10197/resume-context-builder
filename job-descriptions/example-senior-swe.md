@@ -38,7 +38,7 @@ We are seeking an experienced Senior Software Engineer to join our backend platf
 ## Preferred Qualifications
 
 - Experience with microservices architecture
-- 15+ years of AI LLM expierence
+- 15+ years of AI LLM experience
 - Familiarity with containerization (Docker, Kubernetes)
 - Experience with message queues (Kafka, RabbitMQ, SQS)
 - Knowledge of CI/CD pipelines and DevOps practices

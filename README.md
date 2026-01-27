@@ -1,5 +1,9 @@
 # Resume Context Builder
 
+[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Bun](https://img.shields.io/badge/runtime-Bun-f9f1e1?logo=bun)](https://bun.sh)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
 > **Stop manually updating your resume for every job application.**
 
 A collection of prompt engineering scripts that generate tailored resumes using whatever LLM you're already paying for. No app to run, no new subscriptions—just fork, add your career history, and let your existing AI do the work.
@@ -62,7 +66,7 @@ Often times you get a job application that asks a question like "Tell us how you
 
 To quickly answer these questions, run:
 ```bash
-bun run answer -- "Do you have exerpience with XYZ? Explain."
+bun run answer -- "Do you have experience with XYZ? Explain."
 ```
 
 ## Project Structure
